@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 class ProductModel {
-  int id;
+  int? id;
   String name;
   String description;
   double price;
@@ -15,23 +15,31 @@ class ProductModel {
     required this.image,
   });
 
-  factory ProductModel.fromMap(Map<String, dynamic> json) => ProductModel(
-        id: json["id"],
-        name: json["name"],
-        description: json["description"],
-        price: json["price"],
-        image: json["image"],
-      );
+  Map<String, dynamic> toMap() {
+    final result = <String, dynamic>{};
 
-  Map<String, dynamic> toMap() => {
-        "id": id,
-        "name": name,
-        "description": description,
-        "price": price,
-        "image": image,
-      };
+    if (id != null) {
+      result.addAll({'id': id});
+    }
+    result.addAll({'name': name});
+    result.addAll({'description': description});
+    result.addAll({'price': price});
+    result.addAll({'image': image});
 
-  factory ProductModel.fromJson(String str) => ProductModel.fromMap(json.decode(str));
+    return result;
+  }
+
+  factory ProductModel.fromMap(Map<String, dynamic> map) {
+    return ProductModel(
+      id: map['id']?.toInt(),
+      name: map['name'] ?? '',
+      description: map['description'] ?? '',
+      price: map['price']?.toDouble() ?? 0.0,
+      image: map['image'] ?? '',
+    );
+  }
 
   String toJson() => json.encode(toMap());
+
+  factory ProductModel.fromJson(String source) => ProductModel.fromMap(json.decode(source));
 }
