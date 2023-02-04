@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:dw9_delivery_app/app/core/exceptions/unauthorized_exceptions.dart';
-import 'package:dw9_delivery_app/app/pages/home/auth/login/login_state.dart';
+import 'package:dw9_delivery_app/app/pages/auth/login/login_state.dart';
 import 'package:dw9_delivery_app/app/repositories/auth/auth_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';

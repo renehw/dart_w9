@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:dw9_delivery_app/app/pages/home/auth/register/register_state.dart';
+import 'package:dw9_delivery_app/app/pages/auth/register/register_state.dart';
 import 'package:dw9_delivery_app/app/repositories/auth/auth_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

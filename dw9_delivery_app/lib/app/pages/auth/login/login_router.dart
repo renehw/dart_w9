@@ -1,5 +1,5 @@
-import 'package:dw9_delivery_app/app/pages/home/auth/login/login_controller.dart';
-import 'package:dw9_delivery_app/app/pages/home/auth/login/login_page.dart';
+import 'package:dw9_delivery_app/app/pages/auth/login/login_controller.dart';
+import 'package:dw9_delivery_app/app/pages/auth/login/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
